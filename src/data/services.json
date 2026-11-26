@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Diseño de jardines",
+    "description": "Proyecto de diseño paisajístico a medida con selección de plantas, senderos y zonas de descanso.",
+    "duration": "2 semanas",
+    "price": 800,
+    "category": "Paisajismo",
+    "available": true
+  },
+  {
+    "id": 2,
+    "name": "Mantenimiento de jardín",
+    "description": "Corte de césped, poda de arbustos, desmalezado y limpieza general del jardín.",
+    "duration": "1 día",
+    "price": 120,
+    "category": "Mantenimiento",
+    "available": true
+  },
+  {
+    "id": 3,
+    "name": "Instalación de sistema de riego",
+    "description": "Instalación de riego automático por aspersión o goteo con programador y sensores de lluvia.",
+    "duration": "3 días",
+    "price": 450,
+    "category": "Riego",
+    "available": false
+  }
+]
