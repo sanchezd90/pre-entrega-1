@@ -10,8 +10,11 @@ export default class ServiceManager {
         if(!id){
             throw new Error("ID no proporcionado");
         }
-        return this.services.find(service => service.id === id);       
-        
+        const service = this.services.find(service => service.id === id);
+        if(!service){
+            throw new Error("Servicio no encontrado");
+        }
+        return service;        
     }
     addService(serviceData){
         if(!serviceData.name || !serviceData.description || !serviceData.duration || !serviceData.price || !serviceData.category){
@@ -34,13 +37,16 @@ export default class ServiceManager {
         if(index === -1){
             throw new Error("Servicio no encontrado");
         }
-        this.services[index] = {...this.services[index], ...updatedData};
-        return this.services[index];      
+        this.services[index] = {...this.services[index], ...updatedData};            
     }
     deleteService(id){
         if(!id){
             throw new Error("ID no proporcionado");
-        }        
-        this.services = this.services.filter(service => service.id !== id);
+        }   
+        const index = this.services.findIndex(service => service.id === id);
+        if(index === -1){
+            throw new Error("Servicio no encontrado");
+        }     
+        this.services.splice(index, 1);
     }
 }
