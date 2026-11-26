@@ -1,6 +1,14 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 export const validateEnv = () => {
     if (!process.env.PORT || !process.env.NODE_ENV) {
         throw new Error("Variables de entorno no definidas");
     }
     console.log(`Variables de entorno cargadas: Puerto:${process.env.PORT} Entorno:${process.env.NODE_ENV}`);
+}
+
+export const config = {
+    port: process.env.PORT,
+    nodeEnv: process.env.NODE_ENV
 }
